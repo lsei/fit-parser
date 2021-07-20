@@ -1,5 +1,4 @@
-
-interface Options {
+export interface Options {
     force?: boolean;
     speedUnit?: string;
     lengthUnit?: string;
@@ -8,21 +7,19 @@ interface Options {
     mode?: string;
 }
 
-class FitParser {
+export default class FitParser {
     constructor(options: Options)
     parse(filename: string, callback: (error: string | null, data: FitData) => void)
 }
 
-export = FitParser
-
-interface FitData {
+export interface FitData {
     protocolVersion: number;
     profileVersion: number;
     file_creator: { software_version: number; },
     activity: Activity;
 }
 
-interface Activity {
+export interface Activity {
     timestamp: string;
     total_timer_time: Number;
     local_timestamp: string;
@@ -39,7 +36,7 @@ interface Activity {
     sports: any[];
 }
 
-interface SessionBase {
+export interface SessionBase {
 
     timestamp: string;
     start_time: string;
@@ -63,19 +60,19 @@ interface SessionBase {
     event_type: string;
 }
 
-interface Session extends SessionBase {
+export interface Session extends SessionBase {
     sport: string;
     sub_sport: string;
     trigger: string;
     laps: Lap[];
 }
 
-interface Lap extends SessionBase {
+export interface Lap extends SessionBase {
     lap_trigger: string
     records: Record[];
 }
 
-interface Record {
+export interface Record {
     timestamp: string;
     elapsed_time: Number;
     timer_time: Number;
@@ -87,7 +84,7 @@ interface Record {
     cadence: Number;
 }
 
-interface Event {
+export interface Event {
     timestamp: string;
     data: Number;
     event: string;
@@ -95,7 +92,7 @@ interface Event {
     event_group: Number;
 }
 
-interface DeviceInfo {
+export interface DeviceInfo {
     timestamp: string;
     serial_number: Number;
     manufacturer: string;
