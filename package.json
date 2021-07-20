@@ -45,7 +45,7 @@
     "parse"
   ],
   "license": "MIT",
-  "main": "dist/fit-parser.js",
+  "main": "src/fit-parser.js",
   "maintainers": [
     {
       "email": "jimmykane9@gmail.com",
